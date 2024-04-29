@@ -4,7 +4,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
@@ -18,8 +17,7 @@ public class Main {
     public static List<String> FileReader() {
         Path path = Paths.get("aoc_2024_day1_puzzle_input.txt");
         try {
-            List<String> lines = Files.readAllLines(path);
-            return lines;
+            return Files.readAllLines(path);
         } catch (IOException e) {
             System.out.println("An IO Exception occured!");
             return null;
