@@ -8,14 +8,14 @@ import java.util.List;
 public class Task1_a {
 
     public static void execute () {
-        List<String> lines = FileReader();
-        CalibrationValueRecoveryAsString(lines);
-        List<Integer> intList = StringToInt(lines);
-        int result = Adder(intList);
+        List<String> lines = fileReader();
+        calibrationValueRecoveryAsString(lines);
+        List<Integer> intList = stringToInt(lines);
+        int result = adder(intList);
         System.out.println(result);
     }
 
-    public static List<String> FileReader() {
+    public static List<String> fileReader() {
         Path path = Paths.get("aoc_2024_day1_puzzle_input.txt");
         try {
             return Files.readAllLines(path);
@@ -25,7 +25,7 @@ public class Task1_a {
         }
     }
 
-    public static void CalibrationValueRecoveryAsString (List<String> list) {
+    public static void calibrationValueRecoveryAsString (List<String> list) {
         for (int i = 0; i < list.size(); i++) {
             String current = list.get(i);
             char[] characters = current.toCharArray();
@@ -45,7 +45,7 @@ public class Task1_a {
         }
     }
 
-    public static List<Integer> StringToInt (List<String> list) {
+    public static List<Integer> stringToInt (List<String> list) {
         List<Integer> output = new ArrayList<>();
         for (int i = 0; i < list.size(); i++) {
             output.add(Integer.valueOf(list.get(i)));
@@ -53,7 +53,7 @@ public class Task1_a {
         return output;
     }
 
-    public static int Adder (List<Integer> list) {
+    public static int adder (List<Integer> list) {
         return list.stream().mapToInt(Integer::intValue).sum();
     }
 
