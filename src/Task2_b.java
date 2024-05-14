@@ -5,18 +5,17 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Task2_a {
+public class Task2_b {
 
     public static void execute () {
         List<String> lines = fileReader();
-        int idSum = 0;
+        int sum = 0;
         for (int i = 0; i < lines.size(); i++) {
             String[] colors = getColors(lines.get(i));
-            if (isRedPossible(colors) && isGreenPossible(colors) && isBluePossible(colors)) {
-                idSum += getId(lines.get(i));
-            }
+            int power = minRedValue(colors) * minGreenValue(colors) * minBlueValue(colors);
+            sum += power;
         }
-        System.out.println(idSum);
+        System.out.println(sum);
     }
 
     public static List<String> fileReader() {
@@ -39,40 +38,40 @@ public class Task2_a {
         return colors.split(" ");
     }
 
-    public static boolean isRedPossible (String[] colors) {
-        int reference = 12;
+    public static int minRedValue (String[] colors) {
+        int min = 0;
         for (int i = 0; i < colors.length; i++) {
             if (colors[i].equals("red") || colors[i].equals("red,") || colors[i].equals("red;")) {
-                if (Integer.valueOf(colors[i - 1]) > reference) {
-                    return false;
+                if (Integer.valueOf(colors[i - 1]) > min) {
+                    min = Integer.valueOf(colors[i - 1]);
                 }
             }
         }
-        return true;
+        return min;
     }
 
-    public static boolean isGreenPossible (String[] colors) {
-        int reference = 13;
+    public static int minGreenValue (String[] colors) {
+        int min = 0;
         for (int i = 0; i < colors.length; i++) {
             if (colors[i].equals("green") || colors[i].equals("green,") || colors[i].equals("green;")) {
-                if (Integer.valueOf(colors[i - 1]) > reference) {
-                    return false;
+                if (Integer.valueOf(colors[i - 1]) > min) {
+                    min = Integer.valueOf(colors[i - 1]);
                 }
             }
         }
-        return true;
+        return min;
     }
 
-    public static boolean isBluePossible (String[] colors) {
-        int reference = 14;
+    public static int minBlueValue (String[] colors) {
+        int min = 0;
         for (int i = 0; i < colors.length; i++) {
             if (colors[i].equals("blue") || colors[i].equals("blue,") || colors[i].equals("blue;")) {
-                if (Integer.valueOf(colors[i - 1]) > reference) {
-                    return false;
+                if (Integer.valueOf(colors[i - 1]) > min) {
+                    min = Integer.valueOf(colors[i - 1]);
                 }
             }
         }
-        return true;
+        return min;
     }
 
 }

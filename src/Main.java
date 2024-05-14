@@ -7,7 +7,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        Task2_a.execute();
+        Task2_b.execute();
     }
 
 }
