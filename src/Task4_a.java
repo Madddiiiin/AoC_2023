@@ -10,17 +10,16 @@ import java.util.Objects;
 public class Task4_a {
 
     public static void execute () {
-        List<String[]> values = getOwnNumbers(getValues(fileReader()));
-        for (String[] current : values) {
-            for (String value : current) {
-                System.out.print(value + " ");
-            }
-            System.out.println("");
-        }
+        List<List<String>> values = getValues(fileReader());
+        List<List<String>> ownNumbers = getOwnNumbers(values);
+        List<List<String>> winningNumbers = getWinningNumbers(values);
+        List<List<Integer>> matchingNumbers = computeMatchingNumbers(winningNumbers, ownNumbers);
+        int points = adder(pointsCalculator(matchingNumbers));
+        System.out.println(points);
     }
 
     public static List<String> fileReader() {
-        Path path = Paths.get("C:\\Users\\marti\\OneDrive\\Desktop/aoc_2024_day4_puzzle_input.txt");
+        Path path = Paths.get("aoc_2023_day4_puzzle_input.txt");
         try {
             return Files.readAllLines(path);
         } catch (IOException e) {
@@ -74,12 +73,36 @@ public class Task4_a {
         return ownNumbers;
     }
 
-    public static List<List<Integer>> computeMatchingNumbers (List<String[]> winningNumbers, List<String[]> ownNumbers) {
-        List<int[]> matchingNumbers = new ArrayList<>();
+    public static List<List<Integer>> computeMatchingNumbers (List<List<String>> winningNumbers, List<List<String>> ownNumbers) {
+        List<List<Integer>> matchingNumbers = new ArrayList<>();
         for (int i = 0; i < winningNumbers.size(); i++) {
             List<Integer> numbers = new ArrayList<>();
-            for ()
+            for (String current : ownNumbers.get(i)) {
+                if (!(current == null) && !(current.isEmpty()) && winningNumbers.get(i).contains(current)) {
+                    numbers.add(Integer.valueOf(current));
+                }
+            }
+            matchingNumbers.add(numbers);
         }
+        return matchingNumbers;
+    }
+
+    public static List<Integer> pointsCalculator (List<List<Integer>> matchingNumbers) {
+        List<Integer> points = new ArrayList<>();
+        for (List<Integer> row : matchingNumbers) {
+            int rowPoints = 0;
+            if (row.size() == 1) {
+                rowPoints = 1;
+            } else if (row.size() > 1) {
+                rowPoints = (int) Math.pow(2, row.size() - 1);
+            }
+            points.add(rowPoints);
+        }
+        return points;
+    }
+
+    public static int adder (List<Integer> list) {
+        return list.stream().mapToInt(Integer::intValue).sum();
     }
 
 }
