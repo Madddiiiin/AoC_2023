@@ -59,7 +59,7 @@ public class Task3_a {
                         || (row > 0 && column < characters.get(row - 1).length - 1 && isSymbol(characters.get(row - 1)[column + 1]))                        //top right
 
                         || (column > 0 && isSymbol(characters.get(row)[column - 1]))                                                                        //left
-                        || (column < characters.get(row).length - 1 && isSymbol(characters.get(row)[column + 1]))                                       //right
+                        || (column < characters.get(row).length - 1 && isSymbol(characters.get(row)[column + 1]))                                           //right
 
                         || (row < characters.size() - 1 && isSymbol(characters.get(row + 1)[column]))                                                       //bottom
                         || (row < characters.size() - 1 && column > 0 && isSymbol(characters.get(row + 1)[column - 1]))                                     //bottom left
