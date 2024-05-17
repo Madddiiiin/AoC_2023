@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abbf803c-cf59-4f45-b719-00d9492989a5" name="Changes" comment="Task 2: Added FileReader and execute.">
-      <change afterPath="$PROJECT_DIR$/src/Task3_b.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="abbf803c-cf59-4f45-b719-00d9492989a5" name="Changes" comment="Task 3 b finished.">
+      <change afterPath="$PROJECT_DIR$/src/Task4_a.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Task3_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Task3_a.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,7 +138,14 @@
       <option name="project" value="LOCAL" />
       <updated>1715850533326</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Task 3 b finished.">
+      <created>1715933837453</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1715933837453</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -166,6 +171,7 @@
     <MESSAGE value="Task 2 b finished." />
     <MESSAGE value="Task 3 initial commit." />
     <MESSAGE value="Task 3 fixed naming and implemented first Methods." />
-    <option name="LAST_COMMIT_MESSAGE" value="Task 3 fixed naming and implemented first Methods." />
+    <MESSAGE value="Task 3 b finished." />
+    <option name="LAST_COMMIT_MESSAGE" value="Task 3 b finished." />
   </component>
 </project>
