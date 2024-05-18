@@ -100,8 +100,7 @@ public class Task3_b {
         if (numberCount == 2) {
             return numbers;
         } else {
-            List<Integer> empty = new ArrayList<>();
-            return empty;
+            return new ArrayList<>();
         }
     }
 

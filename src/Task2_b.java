@@ -10,8 +10,8 @@ public class Task2_b {
     public static void execute () {
         List<String> lines = fileReader();
         int sum = 0;
-        for (int i = 0; i < lines.size(); i++) {
-            String[] colors = getColors(lines.get(i));
+        for (String line : lines) {
+            String[] colors = getColors(line);
             int power = minRedValue(colors) * minGreenValue(colors) * minBlueValue(colors);
             sum += power;
         }
@@ -28,11 +28,6 @@ public class Task2_b {
         }
     }
 
-    public static int getId (String game) {
-        String id = game.substring(5, game.indexOf(':'));
-        return Integer.valueOf(id);
-    }
-
     public static String[] getColors (String game) {
         String colors = game.substring(game.indexOf(':') + 2);
         return colors.split(" ");
@@ -42,8 +37,8 @@ public class Task2_b {
         int min = 0;
         for (int i = 0; i < colors.length; i++) {
             if (colors[i].equals("red") || colors[i].equals("red,") || colors[i].equals("red;")) {
-                if (Integer.valueOf(colors[i - 1]) > min) {
-                    min = Integer.valueOf(colors[i - 1]);
+                if (Integer.parseInt(colors[i - 1]) > min) {
+                    min = Integer.parseInt(colors[i - 1]);
                 }
             }
         }
@@ -54,8 +49,8 @@ public class Task2_b {
         int min = 0;
         for (int i = 0; i < colors.length; i++) {
             if (colors[i].equals("green") || colors[i].equals("green,") || colors[i].equals("green;")) {
-                if (Integer.valueOf(colors[i - 1]) > min) {
-                    min = Integer.valueOf(colors[i - 1]);
+                if (Integer.parseInt(colors[i - 1]) > min) {
+                    min = Integer.parseInt(colors[i - 1]);
                 }
             }
         }
@@ -66,8 +61,8 @@ public class Task2_b {
         int min = 0;
         for (int i = 0; i < colors.length; i++) {
             if (colors[i].equals("blue") || colors[i].equals("blue,") || colors[i].equals("blue;")) {
-                if (Integer.valueOf(colors[i - 1]) > min) {
-                    min = Integer.valueOf(colors[i - 1]);
+                if (Integer.parseInt(colors[i - 1]) > min) {
+                    min = Integer.parseInt(colors[i - 1]);
                 }
             }
         }

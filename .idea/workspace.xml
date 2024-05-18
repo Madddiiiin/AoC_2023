@@ -4,10 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abbf803c-cf59-4f45-b719-00d9492989a5" name="Changes" comment="Task 4 a finished.">
-      <change afterPath="$PROJECT_DIR$/src/Task4_b.java" afterDir="false" />
+    <list default="true" id="abbf803c-cf59-4f45-b719-00d9492989a5" name="Changes" comment="Task 4 b finished.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Task1_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Task1_a.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Task1_b.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Task1_b.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Task2_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Task2_a.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Task2_b.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Task2_b.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Task3_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Task3_a.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Task3_b.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Task3_b.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Task4_b.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Task4_b.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +35,9 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
@@ -153,7 +161,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715986643922</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Task 4 b finished.">
+      <option name="closed" value="true" />
+      <created>1715990060813</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1715990060813</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -181,6 +197,7 @@
     <MESSAGE value="Task 3 fixed naming and implemented first Methods." />
     <MESSAGE value="Task 3 b finished." />
     <MESSAGE value="Task 4 a finished." />
-    <option name="LAST_COMMIT_MESSAGE" value="Task 4 a finished." />
+    <MESSAGE value="Task 4 b finished." />
+    <option name="LAST_COMMIT_MESSAGE" value="Task 4 b finished." />
   </component>
 </project>

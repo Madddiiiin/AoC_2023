@@ -10,10 +10,10 @@ public class Task2_a {
     public static void execute () {
         List<String> lines = fileReader();
         int idSum = 0;
-        for (int i = 0; i < lines.size(); i++) {
-            String[] colors = getColors(lines.get(i));
+        for (String line : lines) {
+            String[] colors = getColors(line);
             if (isRedPossible(colors) && isGreenPossible(colors) && isBluePossible(colors)) {
-                idSum += getId(lines.get(i));
+                idSum += getId(line);
             }
         }
         System.out.println(idSum);
@@ -31,7 +31,7 @@ public class Task2_a {
 
     public static int getId (String game) {
         String id = game.substring(5, game.indexOf(':'));
-        return Integer.valueOf(id);
+        return Integer.parseInt(id);
     }
 
     public static String[] getColors (String game) {
@@ -43,7 +43,7 @@ public class Task2_a {
         int reference = 12;
         for (int i = 0; i < colors.length; i++) {
             if (colors[i].equals("red") || colors[i].equals("red,") || colors[i].equals("red;")) {
-                if (Integer.valueOf(colors[i - 1]) > reference) {
+                if (Integer.parseInt(colors[i - 1]) > reference) {
                     return false;
                 }
             }
@@ -55,7 +55,7 @@ public class Task2_a {
         int reference = 13;
         for (int i = 0; i < colors.length; i++) {
             if (colors[i].equals("green") || colors[i].equals("green,") || colors[i].equals("green;")) {
-                if (Integer.valueOf(colors[i - 1]) > reference) {
+                if (Integer.parseInt(colors[i - 1]) > reference) {
                     return false;
                 }
             }
@@ -67,7 +67,7 @@ public class Task2_a {
         int reference = 14;
         for (int i = 0; i < colors.length; i++) {
             if (colors[i].equals("blue") || colors[i].equals("blue,") || colors[i].equals("blue;")) {
-                if (Integer.valueOf(colors[i - 1]) > reference) {
+                if (Integer.parseInt(colors[i - 1]) > reference) {
                     return false;
                 }
             }

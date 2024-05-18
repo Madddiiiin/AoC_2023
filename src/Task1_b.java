@@ -105,8 +105,8 @@ public class Task1_b {
 
     public static List<Integer> StringToInt (List<String> list) {
         List<Integer> output = new ArrayList<>();
-        for (int i = 0; i < list.size(); i++) {
-            output.add(Integer.valueOf(list.get(i)));
+        for (String s : list) {
+            output.add(Integer.valueOf(s));
         }
         return output;
     }

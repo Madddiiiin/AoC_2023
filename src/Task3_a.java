@@ -84,26 +84,26 @@ public class Task3_a {
                     if (hasSymbolInPeriphery(characters, i, j)) {
                         newValue = String.valueOf(characters.get(i)[j]);
                         if (j < characters.get(i).length - 1 && isNumber(characters.get(i)[j + 1])) {
-                            newValue = newValue + String.valueOf(characters.get(i)[j + 1]);
+                            newValue = newValue + characters.get(i)[j + 1];
                             if (j < characters.get(i).length - 2 && isNumber(characters.get(i)[j + 2])) {
-                                newValue = newValue + String.valueOf(characters.get(i)[j + 2]);
+                                newValue = newValue + characters.get(i)[j + 2];
                                 j++;
                             }
                             j++;
                         }
                     } else if (j < characters.get(i).length - 1 && isNumber(characters.get(i)[j + 1]) && hasSymbolInPeriphery(characters, i, j + 1)) {
-                        newValue = String.valueOf(characters.get(i)[j]) + String.valueOf(characters.get(i)[j + 1]);
+                        newValue = characters.get(i)[j] + String.valueOf(characters.get(i)[j + 1]);
                         if (j < characters.get(i).length - 2 && isNumber(characters.get(i)[j + 2])) {
-                            newValue = newValue + String.valueOf(characters.get(i)[j + 2]);
+                            newValue = newValue + characters.get(i)[j + 2];
                             j++;
                         }
                         j++;
                     } else if (j < characters.get(i).length - 2 && isNumber(characters.get(i)[j + 1]) && isNumber(characters.get(i)[j + 2]) && hasSymbolInPeriphery(characters, i, j + 2)) {
-                        newValue = String.valueOf(characters.get(i)[j]) + String.valueOf(characters.get(i)[j + 1]) + String.valueOf(characters.get(i)[j + 2]);
+                        newValue = characters.get(i)[j] + String.valueOf(characters.get(i)[j + 1]) + characters.get(i)[j + 2];
                         j += 2;
                     }
 
-                    if (!newValue.equals("")) {
+                    if (!newValue.isEmpty()) {
                         values.add(newValue);
                     }
                 }
@@ -114,8 +114,8 @@ public class Task3_a {
 
     public static List<Integer> stringToInt (List<String> list) {
         List<Integer> output = new ArrayList<>();
-        for (int i = 0; i < list.size(); i++) {
-            output.add(Integer.valueOf(list.get(i)));
+        for (String s : list) {
+            output.add(Integer.valueOf(s));
         }
         return output;
     }

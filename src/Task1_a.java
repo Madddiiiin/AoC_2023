@@ -29,9 +29,9 @@ public class Task1_a {
         for (int i = 0; i < list.size(); i++) {
             String current = list.get(i);
             char[] characters = current.toCharArray();
-            for (int j = 0; j < characters.length; j++) {
-                if (characters[j] > 47 && characters[j] < 58) {
-                    current = "" + characters[j];
+            for (char character : characters) {
+                if (character > 47 && character < 58) {
+                    current = "" + character;
                     break;
                 }
             }
@@ -47,8 +47,8 @@ public class Task1_a {
 
     public static List<Integer> stringToInt (List<String> list) {
         List<Integer> output = new ArrayList<>();
-        for (int i = 0; i < list.size(); i++) {
-            output.add(Integer.valueOf(list.get(i)));
+        for (String s : list) {
+            output.add(Integer.valueOf(s));
         }
         return output;
     }
