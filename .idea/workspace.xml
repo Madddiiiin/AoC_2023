@@ -4,8 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abbf803c-cf59-4f45-b719-00d9492989a5" name="Changes" comment="Task 4 b finished.">
+    <list default="true" id="abbf803c-cf59-4f45-b719-00d9492989a5" name="Changes" comment="Some small code quality improvements.">
+      <change afterPath="$PROJECT_DIR$/aoc_2023_day1_puzzle_input.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aoc_2023_day2_puzzle_input.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aoc_2023_day3_puzzle_input.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aoc_2023_day5_puzzle_input.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aoc_2024_day3_puzzle_input.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Task1_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Task1_a.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Task1_b.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Task1_b.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Task2_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Task2_a.java" afterDir="false" />
@@ -46,13 +52,16 @@
   &quot;associatedIndex&quot;: 7
 }</component>
   <component name="ProjectId" id="2fmDpMBcU46Cheg2GqpwJ3cEvks" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;Application.Main.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
@@ -81,6 +90,7 @@
       <workItem from="1714397546689" duration="7132000" />
       <workItem from="1715696666694" duration="4976000" />
       <workItem from="1715848576035" duration="9239000" />
+      <workItem from="1716114996938" duration="381000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit.">
       <option name="closed" value="true" />
@@ -169,7 +179,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715990060813</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Some small code quality improvements.">
+      <option name="closed" value="true" />
+      <created>1715990769444</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1715990769444</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -187,6 +205,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Initial Commit." />
     <MESSAGE value="Finished Task." />
     <MESSAGE value="Task 2 init." />
@@ -198,6 +217,7 @@
     <MESSAGE value="Task 3 b finished." />
     <MESSAGE value="Task 4 a finished." />
     <MESSAGE value="Task 4 b finished." />
-    <option name="LAST_COMMIT_MESSAGE" value="Task 4 b finished." />
+    <MESSAGE value="Some small code quality improvements." />
+    <option name="LAST_COMMIT_MESSAGE" value="Some small code quality improvements." />
   </component>
 </project>

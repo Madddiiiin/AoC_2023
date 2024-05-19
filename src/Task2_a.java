@@ -20,7 +20,7 @@ public class Task2_a {
     }
 
     public static List<String> fileReader() {
-        Path path = Paths.get("aoc_2024_day2_puzzle_input.txt");
+        Path path = Paths.get("aoc_2023_day2_puzzle_input.txt");
         try {
             return Files.readAllLines(path);
         } catch (IOException e) {
