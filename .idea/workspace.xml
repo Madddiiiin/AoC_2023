@@ -4,21 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abbf803c-cf59-4f45-b719-00d9492989a5" name="Changes" comment="Some small code quality improvements.">
-      <change afterPath="$PROJECT_DIR$/aoc_2023_day1_puzzle_input.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aoc_2023_day2_puzzle_input.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aoc_2023_day3_puzzle_input.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aoc_2023_day5_puzzle_input.txt" afterDir="false" />
+    <list default="true" id="abbf803c-cf59-4f45-b719-00d9492989a5" name="Changes" comment="Fixed naming of input files.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aoc_2024_day3_puzzle_input.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Task1_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Task1_a.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Task1_b.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Task1_b.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Task2_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Task2_a.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Task2_b.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Task2_b.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Task3_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Task3_a.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Task3_b.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Task3_b.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Task4_b.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Task4_b.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +81,7 @@
       <workItem from="1714397546689" duration="7132000" />
       <workItem from="1715696666694" duration="4976000" />
       <workItem from="1715848576035" duration="9239000" />
-      <workItem from="1716114996938" duration="381000" />
+      <workItem from="1716114996938" duration="641000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit.">
       <option name="closed" value="true" />
@@ -187,7 +178,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715990769444</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Fixed naming of input files.">
+      <option name="closed" value="true" />
+      <created>1716115411856</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1716115411856</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -218,6 +217,7 @@
     <MESSAGE value="Task 4 a finished." />
     <MESSAGE value="Task 4 b finished." />
     <MESSAGE value="Some small code quality improvements." />
-    <option name="LAST_COMMIT_MESSAGE" value="Some small code quality improvements." />
+    <MESSAGE value="Fixed naming of input files." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed naming of input files." />
   </component>
 </project>
