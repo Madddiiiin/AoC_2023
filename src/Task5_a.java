@@ -22,11 +22,21 @@ public class Task5_a {
         }
     }
 
-    public static List<String> getSeeds (List<String> input) {
+    public static List<Long> getSeeds (List<String> input) {
         List<String> seedList = new ArrayList<>();
         String firstRow = input.getFirst();
         String seeds = firstRow.substring(firstRow.indexOf(':') + 2);
-        return (Arrays.stream(seeds.split(" ")).toList());
+        List<Long> seedRanges = stringToLong(Arrays.stream(seeds.split(" ")).toList());
+        List<Long> actualSeedNumbers = new ArrayList<>();
+        for (int i = 0; i < 20; i += 2) {
+            long rangeStart = seedRanges.get(i);
+            long rangeLength = seedRanges.get(i + 1);
+            for (int j = 0; j < rangeLength; j++) {
+                actualSeedNumbers.add(rangeStart + j);
+                System.out.println(i + ", " + j);
+            }
+        }
+        return actualSeedNumbers;
     }
 
     public static List<Long> stringToLong (List<String> list) {
@@ -66,17 +76,20 @@ public class Task5_a {
             long currentSource = sources.get(i);
             correspondences.add(currentSource);
             for (List<Long> row : map) {
+                int rowNumber = 0;
+                System.out.println(i + rowNumber);
                 if (currentSource >= row.get(1) && currentSource < row.get(1) + row.get(2)) {
                     long correspondence = row.getFirst() + (currentSource - row.get(1));
                     correspondences.set(i, correspondence);
                 }
+                rowNumber++;
             }
         }
         return correspondences;
     }
 
     public static List<Long> findLocations (List<String> inputData) {
-        List<Long> sources = stringToLong(getSeeds(inputData));
+        List<Long> sources = getSeeds(inputData);
         List<Long> locations;
         List<List<Long>> map = seperateMaps(inputData, 1);
         locations = mapper(map, sources);
