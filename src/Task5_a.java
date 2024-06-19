@@ -8,8 +8,8 @@ public class Task5_a {
 
     public static void execute() {
         List<String> input = fileReader();
-        long minLocation = locationFinder(getAllMaps(input), input);
-        System.out.println(minLocation);
+        long solution = findClosestLocation(findLocations(input));
+        System.out.println(solution);
     }
 
     public static List<String> fileReader() {
@@ -40,7 +40,7 @@ public class Task5_a {
     /*
     mapType: 1 = seedToSoil, 2 = soilToFertilizer, 3 = fertilizerToWater, 4 = waterToLight, 5 = lightToTemperature, 6 = temperatureToHumidity, 7 = humidityToLocation
      */
-    public static List<List<Long>> mapper (List<String> input, int mapType) {
+    public static List<List<Long>> seperateMaps (List<String> input, int mapType) {
         List<List<String>> MapSegmentAsString = new ArrayList<>();
         int emptyLines = 0;
         for (int i = 0; i < input.size(); i++) {
@@ -60,45 +60,36 @@ public class Task5_a {
         return MapSegmentAsInt;
     }
 
-    //public static long
-
-    /*
-    Map<source, destination>
-     */
-    public static Map<Long, Long> buildMap (List<List<Long>> input) {
-        Map<Long, Long> map = new HashMap<>();
-        for (List<Long> row : input) {
-            long destinationRangeStart = row.getFirst();
-            long sourceRangeStart = row.get(1);
-            long rangeLength = row.getLast();
-            for (int i = 0; i < rangeLength; i++) {
-                map.put(sourceRangeStart + i, destinationRangeStart + i);
-            }
-        }
-        return map;
-    }
-
-    public static List<Map<Long, Long>> getAllMaps (List<String> input) {
-        List<Map<Long, Long>> maps = new ArrayList<>();
-        for (int i = 1; i < 8; i++) {
-            maps.add(buildMap(mapper(input, i)));
-        }
-        return maps;
-    }
-
-    public static long locationFinder (List<Map<Long, Long>> maps, List<String> inputData) {
-        List<Long> seeds = stringToLong(getSeeds(inputData));
-        List<Long> destinations = new ArrayList<>();
-        for (Long seed : seeds) {
-            Long currentValue = seed;
-            for (Map<Long, Long> currentMap : maps) {
-                if (currentMap.containsKey(currentValue)) {
-                    currentValue = currentMap.get(currentValue);
+    public static List<Long> mapper (List<List<Long>> map, List<Long> sources) {
+        List<Long> correspondences = new ArrayList<>();
+        for (int i = 0; i < sources.size(); i++) {
+            long currentSource = sources.get(i);
+            correspondences.add(currentSource);
+            for (List<Long> row : map) {
+                if (currentSource >= row.get(1) && currentSource < row.get(1) + row.get(2)) {
+                    long correspondence = row.getFirst() + (currentSource - row.get(1));
+                    correspondences.set(i, correspondence);
                 }
             }
-            destinations.add(currentValue);
         }
-        return destinations.stream().min(Long::compare).get();
+        return correspondences;
+    }
+
+    public static List<Long> findLocations (List<String> inputData) {
+        List<Long> sources = stringToLong(getSeeds(inputData));
+        List<Long> locations;
+        List<List<Long>> map = seperateMaps(inputData, 1);
+        locations = mapper(map, sources);
+        for (int i = 0; i < 6; i++) {
+            sources = locations;
+            map = seperateMaps(inputData, i + 2);
+            locations = mapper(map, sources);
+        }
+        return locations;
+    }
+
+    public static long findClosestLocation (List<Long> locations) {
+        return locations.stream().min(Long::compare).get();
     }
 
 }
