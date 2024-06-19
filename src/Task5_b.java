@@ -4,11 +4,11 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
 
-public class Task5_a {
+public class Task5_b {
 
     public static void execute() {
         List<String> input = fileReader();
-        long solution = findClosestLocation(findLocations(input));
+        long solution = flippedApproach(input);
         System.out.println(solution);
     }
 
@@ -25,7 +25,7 @@ public class Task5_a {
     public static List<String> getSeeds (List<String> input) {
         String firstRow = input.getFirst();
         String seeds = firstRow.substring(firstRow.indexOf(':') + 2);
-        return (Arrays.stream(seeds.split(" ")).toList());
+        return Arrays.stream(seeds.split(" ")).toList();
     }
 
     public static List<Long> stringToLong (List<String> list) {
@@ -35,6 +35,7 @@ public class Task5_a {
         }
         return output;
     }
+
     /*
     mapType: 1 = seedToSoil, 2 = soilToFertilizer, 3 = fertilizerToWater, 4 = waterToLight, 5 = lightToTemperature, 6 = temperatureToHumidity, 7 = humidityToLocation
      */
@@ -50,40 +51,56 @@ public class Task5_a {
                 MapSegmentAsString.add(Arrays.stream(input.get(i).split(" ")).toList());
             }
         }
+
         List<List<Long>> MapSegmentAsInt = new ArrayList<>();
         for (List<String> current : MapSegmentAsString) {
             MapSegmentAsInt.add(stringToLong(current));
         }
         return MapSegmentAsInt;
     }
-    public static List<Long> mapper (List<List<Long>> map, List<Long> sources) {
-        List<Long> correspondences = new ArrayList<>();
-        for (int i = 0; i < sources.size(); i++) {
-            long currentSource = sources.get(i);
-            correspondences.add(currentSource);
-            for (List<Long> row : map) {
-                if (currentSource >= row.get(1) && currentSource < row.get(1) + row.get(2)) {
-                    long correspondence = row.getFirst() + (currentSource - row.get(1));
-                    correspondences.set(i, correspondence);
-                }
+
+    public static long mapper (List<List<Long>> map, long source) {
+        long correspondence = source;
+        for (List<Long> row : map) {
+            if (source >= row.get(0) && source < row.get(0) + row.get(2)) {
+                correspondence = row.get(1) + (source - row.get(0));
             }
         }
-        return correspondences;
+        return correspondence;
     }
 
-    public static List<Long> findLocations (List<String> inputData) {
+    public static long flippedApproach (List<String> inputData) {
         List<Long> sources = stringToLong(getSeeds(inputData));
-        List<Long> locations;
-        List<List<Long>> map = seperateMaps(inputData, 1);
-        locations = mapper(map, sources);
-        for (int i = 0; i < 6; i++) {
-            sources = locations;
-            map = seperateMaps(inputData, i + 2);
-            locations = mapper(map, sources);
+        long iterator = 0;
+        while (true) {
+            System.out.println(iterator);
+            if (isSeed(locationToSeed(inputData, iterator), sources)) {
+                return iterator;
+            }
+            iterator++;
         }
-        return locations;
     }
-    public static long findClosestLocation (List<Long> locations) {
-        return locations.stream().min(Long::compare).get();
+
+    public static long locationToSeed (List<String> inputData, long location) {
+        long currentSource = location;
+        long seed;
+        List<List<Long>> map = seperateMaps(inputData, 7);
+        seed = mapper(map, currentSource);
+        for (int i = 6; i > 0; i--) {
+            currentSource = seed;
+            map = seperateMaps(inputData, i);
+            seed = mapper(map, currentSource);
+        }
+        return seed;
     }
+
+    public static boolean isSeed (long candidate, List<Long> sources) {
+        for (int i = 0; i < 20; i += 2) {
+            if (candidate >= sources.get(i) && candidate < sources.get(i) + sources.get(i + 1)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 }
