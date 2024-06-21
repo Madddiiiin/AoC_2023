@@ -23,7 +23,7 @@ public class Task5_b {
     }
 
     public static List<String> getSeeds (List<String> input) {
-        String firstRow = input.getFirst();
+        String firstRow = input.get(0);
         String seeds = firstRow.substring(firstRow.indexOf(':') + 2);
         return Arrays.stream(seeds.split(" ")).toList();
     }

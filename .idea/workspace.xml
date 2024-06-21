@@ -5,11 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="abbf803c-cf59-4f45-b719-00d9492989a5" name="Changes" comment="Fixed naming of input files.">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Task1_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Task1_a.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Task1_b.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Task1_b.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Task2_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Task2_a.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Task2_b.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Task2_b.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Task5_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Task5_a.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Task5_b.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Task5_b.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Task7_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Task7_a.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

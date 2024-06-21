@@ -9,13 +9,14 @@ public class Task7_a {
     public static void execute () {
         List<String> input = fileReader();
         List<CamelCard> test = arrangeInputs(input);
-        for (CamelCard current : test) {
-            System.out.println(Arrays.toString(current.hand) + current.bid);
-        }
+        int[][] values = getAllValues(test);
+        mergeSort(values, values.length);
+        int result = computeTotalWinnings(values);
+        System.out.println(result);
     }
 
     public static List<String> fileReader() {
-        Path path = Paths.get("aoc_2023_day7_puzzle_input.txt");
+        Path path = Paths.get("C:\\Users\\marti\\OneDrive\\Desktop\\aoc_2023_day7_puzzle_input.txt");
         try {
             return Files.readAllLines(path);
         } catch (IOException e) {
@@ -57,40 +58,204 @@ public class Task7_a {
 
         switch (hand[0]) {
             case 'A':
-                secondaryValue = 12;
+                secondaryValue = 1200000000;
                 break;
             case 'K':
-                secondaryValue = 11;
+                secondaryValue = 1100000000;
                 break;
             case 'Q':
-                secondaryValue = 10;
+                secondaryValue = 1000000000;
                 break;
             case 'J':
-                secondaryValue = 9;
+                secondaryValue = 900000000;
                 break;
             case 'T':
-                secondaryValue = 8;
+                secondaryValue = 800000000;
                 break;
             case '9':
-                secondaryValue = 7;
+                secondaryValue = 700000000;
                 break;
             case '8':
-                secondaryValue = 6;
+                secondaryValue = 600000000;
                 break;
             case '7':
-                secondaryValue = 5;
+                secondaryValue = 500000000;
                 break;
             case '6':
-                secondaryValue = 4;
+                secondaryValue = 400000000;
                 break;
             case '5':
-                secondaryValue = 3;
+                secondaryValue = 300000000;
                 break;
             case '4':
-                secondaryValue = 2;
+                secondaryValue = 200000000;
                 break;
             case '3':
-                secondaryValue = 1;
+                secondaryValue = 100000000;
+                break;
+            default:
+                break;
+        }
+
+        switch (hand[1]) {
+            case 'A':
+                secondaryValue += 12000000;
+                break;
+            case 'K':
+                secondaryValue += 11000000;
+                break;
+            case 'Q':
+                secondaryValue += 10000000;
+                break;
+            case 'J':
+                secondaryValue += 9000000;
+                break;
+            case 'T':
+                secondaryValue += 8000000;
+                break;
+            case '9':
+                secondaryValue += 7000000;
+                break;
+            case '8':
+                secondaryValue += 6000000;
+                break;
+            case '7':
+                secondaryValue += 5000000;
+                break;
+            case '6':
+                secondaryValue += 4000000;
+                break;
+            case '5':
+                secondaryValue += 3000000;
+                break;
+            case '4':
+                secondaryValue += 2000000;
+                break;
+            case '3':
+                secondaryValue += 1000000;
+                break;
+            default:
+                break;
+        }
+
+        switch (hand[2]) {
+            case 'A':
+                secondaryValue += 120000;
+                break;
+            case 'K':
+                secondaryValue += 110000;
+                break;
+            case 'Q':
+                secondaryValue += 100000;
+                break;
+            case 'J':
+                secondaryValue += 90000;
+                break;
+            case 'T':
+                secondaryValue += 80000;
+                break;
+            case '9':
+                secondaryValue += 70000;
+                break;
+            case '8':
+                secondaryValue += 60000;
+                break;
+            case '7':
+                secondaryValue += 50000;
+                break;
+            case '6':
+                secondaryValue += 40000;
+                break;
+            case '5':
+                secondaryValue += 30000;
+                break;
+            case '4':
+                secondaryValue += 20000;
+                break;
+            case '3':
+                secondaryValue += 10000;
+                break;
+            default:
+                break;
+        }
+
+        switch (hand[3]) {
+            case 'A':
+                secondaryValue += 1200;
+                break;
+            case 'K':
+                secondaryValue += 1100;
+                break;
+            case 'Q':
+                secondaryValue += 1000;
+                break;
+            case 'J':
+                secondaryValue += 900;
+                break;
+            case 'T':
+                secondaryValue += 800;
+                break;
+            case '9':
+                secondaryValue += 700;
+                break;
+            case '8':
+                secondaryValue += 600;
+                break;
+            case '7':
+                secondaryValue += 500;
+                break;
+            case '6':
+                secondaryValue += 400;
+                break;
+            case '5':
+                secondaryValue += 300;
+                break;
+            case '4':
+                secondaryValue += 200;
+                break;
+            case '3':
+                secondaryValue += 100;
+                break;
+            default:
+                break;
+        }
+
+        switch (hand[4]) {
+            case 'A':
+                secondaryValue += 12;
+                break;
+            case 'K':
+                secondaryValue += 11;
+                break;
+            case 'Q':
+                secondaryValue += 10;
+                break;
+            case 'J':
+                secondaryValue += 9;
+                break;
+            case 'T':
+                secondaryValue += 8;
+                break;
+            case '9':
+                secondaryValue += 7;
+                break;
+            case '8':
+                secondaryValue += 6;
+                break;
+            case '7':
+                secondaryValue += 5;
+                break;
+            case '6':
+                secondaryValue += 4;
+                break;
+            case '5':
+                secondaryValue += 3;
+                break;
+            case '4':
+                secondaryValue += 2;
+                break;
+            case '3':
+                secondaryValue += 1;
                 break;
             default:
                 break;
@@ -163,8 +328,8 @@ public class Task7_a {
         }
 
         int counter1 = 1;
-        int counter2 = 2;
-        int counter3 = 3;
+        int counter2 = 0;
+        int counter3 = 0;
 
         for (int i = 1; i < hand.length; i++) {
             if (hand[i] == first) {
@@ -200,8 +365,8 @@ public class Task7_a {
         }
 
         int counter1 = 1;
-        int counter2 = 2;
-        int counter3 = 3;
+        int counter2 = 0;
+        int counter3 = 0;
 
         for (int i = 1; i < hand.length; i++) {
             if (hand[i] == first) {
@@ -243,15 +408,65 @@ public class Task7_a {
     }
 
     public static int[][] getAllValues (List<CamelCard> camelCards) {
-        int[][] values = new int[camelCards.size()][2];
+        int[][] values = new int[camelCards.size()][3];
         for (int i = 0; i < camelCards.size(); i++) {
             values[i][0] = getHandValue(camelCards.get(i))[0];
             values[i][1] = getHandValue(camelCards.get(i))[1];
+            values[i][2] = camelCards.get(i).bid;
         }
         return values;
     }
-    public static void mergeSort ()
+    public static void mergeSort(int[][] a, int n) {
+        if (n < 2) {
+            return;
+        }
+        int mid = n / 2;
+        int[][] l = new int[mid][3];
+        int[][] r = new int[n - mid][3];
 
+        for (int i = 0; i < mid; i++) {
+            l[i][0] = a[i][0];
+            l[i][1] = a[i][1];
+            l[i][2] = a[i][2];
+        }
+        for (int i = mid; i < n; i++) {
+            r[i - mid][0] = a[i][0];
+            r[i - mid][1] = a[i][1];
+            r[i - mid][2] = a[i][2];
+        }
+        mergeSort(l, mid);
+        mergeSort(r, n - mid);
+
+        merge(a, l, r, mid, n - mid);
+    }
+
+    public static void merge(
+            int[][] a, int[][] l, int[][] r, int left, int right) {
+
+        int i = 0, j = 0, k = 0;
+        while (i < left && j < right) {
+            if (l[i][0] < r[j][0]) {
+                a[k++] = l[i++];
+            } else if (l[i][0] == r[j][0] && l[i][1] <= r[j][1]) {
+                a[k++] = l[i++];
+            } else {
+                a[k++] = r[j++];
+            }
+        }
+        while (i < left) {
+            a[k++] = l[i++];
+        }
+        while (j < right) {
+            a[k++] = r[j++];
+        }
+    }
+
+    public static int computeTotalWinnings (int[][] sortedValues) {
+        int totalWinnings = 0;
+        for (int i = 0; i < sortedValues.length; i++) {
+            totalWinnings += sortedValues[i][2] * (i + 1);
+        }
+        return totalWinnings;
     }
 
 }

@@ -23,7 +23,7 @@ public class Task5_a {
     }
 
     public static List<String> getSeeds (List<String> input) {
-        String firstRow = input.getFirst();
+        String firstRow = input.get(0);
         String seeds = firstRow.substring(firstRow.indexOf(':') + 2);
         return (Arrays.stream(seeds.split(" ")).toList());
     }
@@ -63,7 +63,7 @@ public class Task5_a {
             correspondences.add(currentSource);
             for (List<Long> row : map) {
                 if (currentSource >= row.get(1) && currentSource < row.get(1) + row.get(2)) {
-                    long correspondence = row.getFirst() + (currentSource - row.get(1));
+                    long correspondence = row.get(0) + (currentSource - row.get(1));
                     correspondences.set(i, correspondence);
                 }
             }
